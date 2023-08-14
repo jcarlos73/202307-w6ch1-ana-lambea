@@ -1,6 +1,15 @@
-import { Film } from "../types";
+import { FilmStructure } from "../types";
 
-export const films: Film[] = [
+export const filmMock: FilmStructure = {
+  id: 1,
+  title: "Viaje a Darjeeling",
+  poster:
+    "https://es.web.img3.acsta.net/c_310_420/medias/nmedia/18/67/28/56/20350733.jpg",
+  director: "Wes Anderson",
+  year: 2007,
+};
+
+export const filmsMock: FilmStructure[] = [
   {
     id: 1,
     title: "Viaje a Darjeeling",
