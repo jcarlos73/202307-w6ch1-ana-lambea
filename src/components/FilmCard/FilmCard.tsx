@@ -21,7 +21,7 @@ const FilmCard = ({
         height="406"
       />
       Dirección: {director}
-      <Button className="film__button">
+      <Button className="button film__button">
         <X aria-label="eliminar película" />
       </Button>
     </article>
