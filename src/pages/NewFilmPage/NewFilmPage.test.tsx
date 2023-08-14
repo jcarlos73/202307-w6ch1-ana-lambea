@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import FilmsContextProvider from "../../store/films/context/FilmContextProvider";
 import NewFilmPage from "./NewFilmPage";
 
 describe("Given a NewFilmPage page", () => {
@@ -6,7 +7,11 @@ describe("Given a NewFilmPage page", () => {
     test("Then it should show a heading 'Añadir nueva película'", () => {
       const expectedHeading = "Añadir nueva película";
 
-      render(<NewFilmPage />);
+      render(
+        <FilmsContextProvider>
+          <NewFilmPage />
+        </FilmsContextProvider>,
+      );
 
       const heading = screen.getByRole("heading", { name: expectedHeading });
 

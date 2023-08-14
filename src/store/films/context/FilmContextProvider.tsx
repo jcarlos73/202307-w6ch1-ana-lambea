@@ -1,5 +1,5 @@
 import { PropsWithChildren, useCallback, useMemo, useState } from "react";
-import { filmsMock } from "../../../mocks/filmsMock";
+import useFilmsApi from "../../../hooks/useFilmsApi";
 import { FilmStructure } from "../../../types";
 import FilmsContext from "./FilmsContext";
 import { FilmsContextStructure } from "./type";
@@ -8,10 +8,12 @@ const FilmsContextProvider = ({
   children,
 }: PropsWithChildren): React.ReactElement => {
   const [films, setFilms] = useState<FilmStructure[]>([]);
+  const { getFilms } = useFilmsApi();
 
-  const loadFilms = useCallback(() => {
-    setFilms(filmsMock);
-  }, []);
+  const loadFilms = useCallback(async () => {
+    const films = await getFilms();
+    setFilms([...films]);
+  }, [getFilms]);
 
   const filmsContextValue = useMemo(
     (): FilmsContextStructure => ({
