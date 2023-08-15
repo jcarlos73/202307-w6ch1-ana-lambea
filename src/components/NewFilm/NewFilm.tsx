@@ -55,7 +55,7 @@ const NewFilm = (): React.ReactElement => {
         <input
           type="number"
           id="year"
-          value={newFilm.year || ""}
+          value={newFilm.year === 0 ? "" : newFilm.year}
           onChange={addNewFilm}
         />
       </div>
