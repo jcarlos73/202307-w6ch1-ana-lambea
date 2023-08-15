@@ -8,10 +8,10 @@ import "./styles/styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <FilmsContextProvider>
+    <FilmsContextProvider>
+      <BrowserRouter>
         <App />
-      </FilmsContextProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </FilmsContextProvider>
   </React.StrictMode>,
 );
