@@ -2,7 +2,7 @@ import { PropsWithChildren, useCallback, useMemo, useState } from "react";
 import useFilmsApi from "../../../hooks/useFilmsApi";
 import { FilmStructure } from "../../../types";
 import FilmsContext from "./FilmsContext";
-import { FilmsContextStructure } from "./type";
+import { FilmsContextStructure } from "./types";
 
 const FilmsContextProvider = ({
   children,
